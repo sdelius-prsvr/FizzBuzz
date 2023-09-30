@@ -3,51 +3,59 @@
  ******************************/
 
 
-// Multi-Function Approach!
+// Nested Function Approach!
 //
-// function fizz(number){
-//   return (number % 3 === 0)
+
+// function fizzy(num){
+//   function fizz(num){
+//     return (num % 3 === 0) ? 'Fizz' : ''
+//   }
+//   function buzz(num){
+//     return (num % 5 === 0) ? 'Buzz' : ''
+//   }
+//   if(fizz(num) + buzz(num) === ''){
+//     return num
+//   }else{
+//     return fizz(num) + buzz(num)
+//   }
 // }
-//
-// function buzz(number){
-//   return (number % 5 === 0)
-// }
-//
-// function fizzy(number){
-//   if (fizz(number) && buzz(number))
-//     return 'FizzBuzz'
-//   if (fizz(number))
-//     return 'Fizz'
-//   if (buzz(number))
-//     return 'Buzz'
-//   else return number
-// }
+
+
+//Nested Conditional Approach!
+
+function fizzy(num){
+  return (num % 3 === 0)
+  ? (num % 5 === 0)
+    ? 'FizzBuzz' : 'Fizz'
+    : (num % 5 === 0)
+      ? 'Buzz' : num
+}
 
 
 //Verbose/Literal Approach!
 //
-// function fizzy(number){
-//   if (number % 3 === 0 && number % 5 !== 0)
+// function fizzy(num){
+//   if (num % 3 === 0 && num % 5 !== 0)
 //     return 'Fizz'
-//   if (number % 5 === 0 && number % 3 !== 0)
+//   if (num % 5 === 0 && num % 3 !== 0)
 //   return 'Buzz'
-//   if (number % 3 === 0 && number % 5 === 0)
+//   if (num % 3 === 0 && num % 5 === 0)
 //     return 'FizzBuzz'
-//   else return number
+//   else return num
 // }
 
 
 // Inverted/Simplified Approach!
 
-function fizzy(number){
-  if (number % 3 === 0 && number % 5 === 0)
-    return 'FizzBuzz'
-  if (number % 5 === 0)
-    return 'Buzz'
-  if (number % 3 === 0)
-    return 'Fizz'
-  else return number
-}
+// function fizzy(num){
+//   if (num % 3 === 0 && num % 5 === 0)
+//     return 'FizzBuzz'
+//   if (num % 5 === 0)
+//     return 'Buzz'
+//   if (num % 3 === 0)
+//     return 'Fizz'
+//   else return num
+// }
 
 
 
